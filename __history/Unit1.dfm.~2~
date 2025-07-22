@@ -10,7 +10,6 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  OnCreate = FormCreate
   TextHeight = 15
   object Panel1: TPanel
     Left = 56
@@ -22,9 +21,9 @@ object Form1: TForm1
     ParentBackground = False
     TabOrder = 0
     object Label1: TLabel
-      Left = 392
+      Left = 192
       Top = 32
-      Width = 121
+      Width = 6
       Height = 30
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -34,10 +33,10 @@ object Form1: TForm1
       ParentFont = False
     end
     object Image1: TImage
-      Left = 264
-      Top = 68
-      Width = 353
-      Height = 297
+      Left = 304
+      Top = 24
+      Width = 313
+      Height = 341
       Picture.Data = {
         0A544A504547496D61676591190000FFD8FFE000104A46494600010101004800
         480000FFDB00430006040506050406060506070706080A100A0A09090A140E0F
@@ -511,7 +510,6 @@ object Form1: TForm1
         E07DBB43ABB0983120000000000000000000000000000000000000000000003F
         FFD9}
       Stretch = True
-      OnClick = Image4Click
     end
     object Image3: TImage
       Left = 48
@@ -1968,30 +1966,5 @@ object Form1: TForm1
       Stretch = True
       OnClick = Image2Click
     end
-  end
-  object ProgressBar1: TProgressBar
-    Left = 808
-    Top = 216
-    Width = 81
-    Height = 17
-    TabOrder = 1
-  end
-  object ProgressBar2: TProgressBar
-    Left = 808
-    Top = 339
-    Width = 81
-    Height = 17
-    TabOrder = 2
-  end
-  object ProgressBar3: TProgressBar
-    Left = 808
-    Top = 463
-    Width = 81
-    Height = 17
-    TabOrder = 3
-  end
-  object Timer1: TTimer
-    Left = 792
-    Top = 208
   end
 end

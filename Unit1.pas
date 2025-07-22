@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
-  Vcl.StdCtrls, Vcl.Skia, Vcl.Imaging.jpeg;
+  Vcl.StdCtrls, Vcl.Skia, Vcl.Imaging.jpeg, Vcl.ComCtrls;
 
 type
   TForm1 = class(TForm)
@@ -18,13 +18,20 @@ type
     Image5: TImage;
     Image6: TImage;
     Image7: TImage;
+    Timer1: TTimer;
+    ProgressBar1: TProgressBar;
+    ProgressBar2: TProgressBar;
+    ProgressBar3: TProgressBar;
     procedure Image1Click(Sender: TObject);
     procedure Image2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Image4Click(Sender: TObject);
     procedure Image3Click(Sender: TObject);
   private
     { Private declarations }
   public
-    { Public declarations }
+    var contador,iron,diamond,Netherite:integer ;
+      var forcaClique :Integer;
   end;
 
 var
@@ -34,32 +41,54 @@ var
 implementation
 
 {$R *.dfm}
-var contador,iron,diamond:integer;
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+forcaClique := 1;
+end;
+
 procedure TForm1.Image1Click(Sender: TObject);
 begin
-forcaClique :=1;
-contador := contador +1;
+contador := contador +forcaClique;
 label1.Caption := contador.ToString;
 end;
 
 procedure TForm1.Image2Click(Sender: TObject);
 begin
-forcaClique := 10;
 iron := 10;
-if contador>=10 then begin
+if contador>=iron then begin
   ShowMessage('Sucesso na Aquisição');
-contador := contador-10;
+contador := contador - 10;
+label1.Caption := contador.ToString;
+forcaClique := forcaClique +1;
   end else begin
  ShowMessage('Dinheiro insuficiente');
 end;
 end;
+
+
+
 procedure TForm1.Image3Click(Sender: TObject);
 begin
-diamond :=50;
-if contador>diamond then begin
-ShowMessage('Sucesso na Aquisição');
-contador := contador -50;
-end else begin
+ Diamond := 50;
+if contador>=Diamond then begin
+  ShowMessage('Sucesso na Aquisição');
+contador := contador - 50;
+label1.Caption := contador.ToString;
+forcaClique := forcaClique +3;
+  end else begin
+ ShowMessage('Dinheiro insuficiente');
+end;
+end;
+
+procedure TForm1.Image4Click(Sender: TObject);
+begin
+Netherite := 100;
+if contador>=Netherite then begin
+  ShowMessage('Sucesso na Aquisição');
+contador := contador - 100;
+label1.Caption := contador.ToString;
+forcaClique := forcaClique +9;
+  end else begin
  ShowMessage('Dinheiro insuficiente');
 end;
 end;
